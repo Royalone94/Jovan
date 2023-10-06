@@ -359,7 +359,7 @@ https://templatemo.com/tm-531-reflux
           <div class="row">
             <div class="right-content">
               <div class="container">
-                <form id="contact" method="post" action="">
+                <form id="contact" method="post" action="https://651fd0af921a3f8877c7.appwrite.global/" onsubmit="setTimeout(function(){window.location.reload();},10);">
                   <div class="row">
                     <div class="col-md-6">
                       <fieldset>
@@ -411,7 +411,7 @@ https://templatemo.com/tm-531-reflux
                     </div>
                     <div class="col-md-12">
                       <fieldset>
-                        <button id="form-submit" class="button">
+                        <button type="submit" id="form-submit" class="button">
                           Send Message
                         </button>
                       </fieldset>
@@ -438,32 +438,6 @@ https://templatemo.com/tm-531-reflux
       //according to loftblog tut
       $(".main-menu li:first").addClass("active");
 
-      $('#form-submit').on('click', function(e){
-        e.preventDefault();
-        const payload = {
-          name: $('#name').val(),
-          subject: $('#subject').val(),
-          email: $('#email').val(),
-          text: $('#message').val(),
-        };
-
-        console.log('payload', payload);
-        $.ajax({
-          type: "POST",
-          url: "https://651fd0af921a3f8877c7.appwrite.global/",
-          data: payload,
-          success: function(){
-            alert( "Thank you for reaching out! I will catch up soon!");
-            $('#name').val('');
-            $('#subject').val('');
-            $('#email').val('');
-            $('#message').val('');
-          },
-          error: function(error) {
-            alert("Failed to send email! Please try again later");
-          }
-        });
-      });
       var showSection = function showSection(section, isAnimate) {
         var direction = section.replace(/#/, ""),
           reqSection = $(".section").filter(
